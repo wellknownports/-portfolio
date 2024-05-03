@@ -10,8 +10,9 @@ const Home = () => {
       <ThemeProvider>
         <GlobalStyle />
         <Page>
-          <Desktop></Desktop>
+          <Desktop>
           {DesktopIcons}
+          </Desktop>
         </Page>
       </ThemeProvider>
     </body>

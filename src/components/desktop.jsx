@@ -1,4 +1,7 @@
+/* 리액트에서 useState, useCallback 원자재 수입 */
 import React, { useState, useCallback } from "react";
+
+/* @react95/core로부터 글로벌스타일, 테마프로바이더, 리스트, 프레임, 프로그레스바, 태스크바 원자재 수입 */
 import {
   GlobalStyle,
   ThemeProvider,
@@ -7,11 +10,18 @@ import {
   ProgressBar,
   TaskBar,
 } from "@react95/core";
-import Janne_pixelated from "../janne_pixelated.png";
+
+/* 이미지 넣으려면 이렇게 해야되드라 */
+import FlowKat_Logo from "../images/flowkat-logo1.png";
+import FlowKat_Bing from "../images/spining_flowkat.gif";
+
+/* 수입 또 수입 */
 import socialMedia from "./socialMedia";
 import Shortcuts from "./desktopIcons";
 import * as S from "./layoutStyling";
 import "./styles.scss";
+
+/* @react95/icons에서 아이콘으로 쓸 것들 수입 */
 import {
   Progman37,
   Mspaint,
@@ -20,17 +30,22 @@ import {
   Progman34,
   Mail,
 } from "@react95/icons";
-import Portfolio from "./portfolio";
-import CV from "./cv";
-import Tunes from "./tunes";
 
+/* 금산 인삼, 풍기 인견, 포항 과메기 수입 */
+import ReleaseNote from "./releasenote";
+import CharacterDesign from "./characterdesign";
+import Makers from "./makers";
+
+
+/* 데스크탑이라는 전체창에 대한 함수  */
 function Desktop() {
-  /* Mobile detection */
+  /* Mobile 감지해서 상태를 저장 */
   const isMobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
 
+/* 이건 아직 모르겠음 useState 깡통 만들어두는 듯. 어다가 쓰려나 */
   const [items] = useState([]);
 
   /* About Modal */
@@ -42,66 +57,77 @@ function Desktop() {
     setShowAboutModal(false);
   }, []);
 
-  /* Skills Modal */
-  const [showSkillsModal, setShowSkillsModal] = useState(false);
-  const handleOpenSkillsModal = useCallback(() => {
-    setShowSkillsModal(true);
+  /* Release Note Modal */
+  const [showReleaseNoteModal, setShowReleaseNoteModal] = useState(true);
+  const handleOpenReleaseNoteModal = useCallback(() => {
+    setShowReleaseNoteModal(true);
   }, []);
-  const handleCloseSkillsModal = useCallback(() => {
-    setShowSkillsModal(false);
-  }, []);
-
-  /* Photo Modal */
-  const [showPhotoModal, setShowPhotoModal] = useState(false);
-  const handleOpenPhotoModal = useCallback(() => {
-    setShowPhotoModal(true);
-  }, []);
-  const handleClosePhotoModal = useCallback(() => {
-    setShowPhotoModal(false);
+  const handleCloseReleaseNoteModal = useCallback(() => {
+    setShowReleaseNoteModal(false);
   }, []);
 
-  /* Vaporwave Modal 1 */
-  const [showVaporwaveModal1, setShowVaporwaveModal1] = useState(false);
-  const handleOpenVaporwaveModal1 = useCallback(() => {
-    setShowVaporwaveModal1(true);
+  /* Character Design Modal */
+  const [showCharacterDesignModal, setShowCharacterDesignModal] = useState(false);
+  const handleOpenCharacterDesignModal = useCallback(() => {
+    setShowCharacterDesignModal(true);
   }, []);
-  const handleCloseVaporwaveModal1 = useCallback(() => {
-    setShowVaporwaveModal1(false);
+  const handleCloseCharacterDesignModal = useCallback(() => {
+    setShowCharacterDesignModal(false);
   }, []);
 
-  /* Portfolio Shortcut */
-  const closePortfolio = () => {
-    togglePortfolio(false);
+  /* Makers Modal */
+  const [showMakersModal, setShowMakersModal] = useState(false);
+  const handleOpenMakersModal = useCallback(() => {
+    setShowMakersModal(true);
+  }, []);
+  const handleCloseMakersModal = useCallback(() => {
+    setShowMakersModal(false);
+  }, []);
+
+  /* Manual Modal */
+  const [showManualModal, setShowManualModal] = useState(false);
+  const handleOpenManualModal = useCallback(() => {
+    setShowManualModal(true);
+  }, []);
+  const handleCloseManualModal = useCallback(() => {
+    setShowManualModal(false);
+  }, []);
+
+  /* Release Note Shortcut */
+  const closeReleaseNote = () => {
+    toggleReleaseNote(false);
   };
 
-  const openPortfolio = () => {
-    togglePortfolio(true);
+  const openReleaseNote = () => {
+    toggleReleaseNote(true);
   };
-  const [explorerOpened, togglePortfolio] = useState(false);
+  const [rnOpened, toggleReleaseNote] = useState(false);
 
-  /* CV Shortcut */
+  /* Character Design Shortcut */
 
-  const closeCV = () => {
-    toggleCV(false);
-  };
-
-  const openCV = () => {
-    toggleCV(true);
+  const closeCharacterDesign = () => {
+    toggleCharacterDesign(false);
   };
 
-  const [cvOpened, toggleCV] = useState(false);
-
-  /* Tunes Shortcut */
-
-  const closeTunes = () => {
-    toggleTunes(false);
+  const openCharacterDesign = () => {
+    toggleCharacterDesign(true);
   };
 
-  const openTunes = () => {
-    toggleTunes(true);
+  const [cdOpened, toggleCharacterDesign] = useState(false);
+
+  /* Makers Shortcut */
+
+  const closeMakers = () => {
+    toggleMakers(false);
   };
 
-  const [tunesOpened, toggleTunes] = useState(false);
+  const openMakers = () => {
+    toggleMakers(true);
+  };
+
+  const [mkOpened, toggleMakers] = useState(false);
+
+/* 윈도우 데스크탑을 그려 보아요 */
 
   return (
     <ThemeProvider theme="millenium">
@@ -125,147 +151,41 @@ function Desktop() {
         >
           <S.layoutMainContent bg="white" boxShadow="out">
             <S.textModal>
-              <h1>Moikka!</h1>
+              <h1>FlowKat!</h1>
               <p>
-                I'm Janne, a designer of many talents from Helsinki. I've been
-                working lately with product development in many roles and
-                domains: from ecommerce, to public sector, to startups. I'm into
-                structured and systems oriented software development, where
-                design is agile and rapid.
+               FlowKat은 오픈소스 APM의 대표격인 스카우터 기반의 Java 애플리케이션 성능 관리 솔루션입니다.
+               스카우터가 가진 강력한 기능들은 사용성이 높은 웹으로 이식하고 사용자 편의와 분석 기능을 덧붙여 완성했습니다.
+               서비스 전반의 흐름을 수집하여 직관적이고 다양한 방법으로 사용자에게 새로운 모니터링 경험을 제공하려 노력하는 미어캣.
+               바로 플로우캣입니다.
               </p>
-              <p>
-                This app, sort of a playground of ideas, has been built with
-                Create React App and{" "}
-                <a
-                  href="https://github.com/React95/React95"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  React95
-                </a>
-                , an open-source Windows95 component library for React. If
-                you're interested in this project even further check out the{" "}
-                <a
-                  href="https://www.figma.com/community/file/1217110360892669474"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  React95 component library on Figma
-                </a>{" "}
-                that I made as a past-time project.
-              </p>
-              <span>
-                <a
-                  href="https://windowswallpaper.miraheze.org/wiki/File:Clouds_(Windows_95).png"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Background
-                </a>{" "}
-                by WindowsAesthetics /{" "}
-                <a
-                  href="https://creativecommons.org/licenses/by-sa/4.0/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CC BY-SA 4.0
-                </a>
-              </span>
+            <div align="center">
+                  <img
+                    src={FlowKat_Logo}
+                    aria-hidden
+                    alt="귀여운 플로우캣 로고"
+                    class="full-width-image"
+                  ></img>
+            </div>
+                <div align="center" class="image-text">
+                  <p>flowkat_logo.png</p>
+
+                </div>
             </S.textModal>
           </S.layoutMainContent>
         </S.layoutMain>
       )}
-      {showSkillsModal && (
+      {showCharacterDesignModal && (
         <S.layoutMain
           isMobile={isMobile}
-          title={"Skills.txt"}
-          closeModal={handleCloseSkillsModal}
-          icon={<Mspaint variant="32x32_4" />}
-          menu={[
-            {
-              name: "Options",
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseSkillsModal}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
-        >
-          <S.layoutMainContent bg="white" boxShadow="in">
-            <S.textModal>
-              <p>
-                {" "}
-                <h1>Some of my skills</h1>I disagree with quantifying skills
-                with numbers, percentages etc. - are skills really something
-                people can measure? However, here is a rough estimate of my
-                latest skills.
-                <br />
-                <hr />
-                <h2>Design tools</h2>
-                <h3>Figma, Sketch</h3>
-                <ProgressBar width={250} percent={90} />
-                <h3>Adobe CC</h3>
-                <ProgressBar width={250} percent={85} />
-                <h3>Prototyping, wireframing, user flows</h3>
-                <ProgressBar width={250} percent={80} />
-                <h3>User testing, interviewing</h3>
-                <ProgressBar width={250} percent={80} />
-                <h3>WCAG 2.1</h3>
-                <ProgressBar width={250} percent={75} />
-                <br />
-                <hr />
-                <h2>Dev tools</h2>
-                <h3>Storybook(JS)</h3>
-                <ProgressBar width={250} percent={75} />
-                <h3>HTML, CSS, SASS</h3>
-                <ProgressBar width={250} percent={75} />
-                <h3>Wordpress (PHP/Themes)</h3>
-                <ProgressBar width={250} percent={70} />
-                <h3>Git</h3>
-                <ProgressBar width={250} percent={60} />
-                <h3>Raspberry Pi & Arduino</h3>
-                <ProgressBar width={250} percent={30} />
-                <h3>React</h3>
-                <ProgressBar width={250} percent={30} />
-                <h3>Vue</h3>
-                <ProgressBar width={250} percent={15} />
-                <br />
-                <hr />
-                <h2>Other Skills</h2>
-                <ul>
-                  <li>Agile methods</li>
-                  <li>Product development</li>
-                  <li>Project management</li>
-                  <li>Design systems</li>
-                  <li>User interviews</li>
-                  <li>User testing</li>
-                  <li>Wireframing and prototyping</li>
-                  <li>Visual design</li>
-                  <li>Research</li>
-                  <li>Copywriting and social media</li>
-                  <li>Content creation</li>
-                  <li>Workshops</li>
-                  <li>Facilitation</li>
-                  <li>Concept creation</li>
-                </ul>
-              </p>
-            </S.textModal>
-          </S.layoutMainContent>
-        </S.layoutMain>
-      )}
-      {showPhotoModal && (
-        <S.layoutMain
-          isMobile={isMobile}
-          title={"janne_compressed_for_web.jpeg"}
-          closeModal={handleClosePhotoModal}
+          title={"flowkat design.jpeg"}
+          closeModal={handleCloseCharacterDesignModal}
           icon={<User variant="32x32_4" />}
           menu={[
             {
               name: "Options",
               list: (
                 <List>
-                  <List.Item onClick={handleClosePhotoModal}>Close</List.Item>
+                  <List.Item onClick={handleCloseCharacterDesignModal}>Close</List.Item>
                 </List>
               ),
             },
@@ -278,21 +198,21 @@ function Desktop() {
             }}
           >
             <img
-              src={Janne_pixelated}
+              src={FlowKat_Bing}
               aria-hidden
-              alt="Janne as a pixelated image"
+              alt="BingBing FlowKat"
               class="full-width-image"
             ></img>
           </Frame>
           <div class="image-text">
-            <p>janne_compressed_for_web.jpeg</p>
+            <p>spining-flowkat.gif</p>
           </div>
         </S.layoutMain>
       )}
-      {showVaporwaveModal1 && (
+      {showManualModal && (
         <S.layoutMain
           isMobile={isMobile}
-          closeModal={handleCloseVaporwaveModal1}
+          closeModal={handleCloseManualModal}
           height="100%"
           icon={<CdMusic variant="32x32_4" />}
           width={340}
@@ -301,42 +221,55 @@ function Desktop() {
               name: "Options",
               list: (
                 <List>
-                  <List.Item onClick={handleCloseVaporwaveModal1}>
+                  <List.Item onClick={handleCloseManualModal}>
                     Close
                   </List.Item>
                 </List>
               ),
             },
           ]}
-          title="My_Alter_Ego.doc"
+          title="FlowKat_Quick_Guide.doc"
         >
           <S.textModal>
-            <h1>A Vaporwave Album</h1>
-            <p>
-              In 2018 I took part in a workshop in Lithuania at the Vilnius Art
-              Academy in producing a Vaporwave Album with participants coming in
-              from around Europe.
-            </p>
-            <p>
-              Over the course of the weekend we produced music videos, songs and
-              more. I produced two songs for the album and a music video. The
-              album can be found on streaming services.
-            </p>
-            <a href="https://open.spotify.com/album/0pCqTDsI4zOZXZJnxx2yPT?si=JW5qpLJJQsO3eK2m65FQBQ">
-              The album on Spotify
-            </a>
-            <p></p>
-            <br></br>
-            <div>
-              <iframe
-                src="https://www.youtube.com/embed/7SyxEF-QG_M"
-                frameborder="0"
-                width="100%"
-                title="A Song from a Vaporwave Album"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
+          <p>
+            <h1>스카우터 서버 기동/정지</h1>
+            <b>NOTE:</b> 스카우터 에이전트는 WAS에 플러그인 형태로 동작합니다. 일반적으로 WAS 기동/종료에 맞춰 자동으로 기동/종료됩니다.
+            <ProgressBar width={250} percent={75} />
+            <br />
+            - 기동
+            ```
+            # su - apm
+            [스카우터 수집 서버 기동]
+            $ cd /app/scouter/server
+            //TCP 6100, UDP 6100 포트 사용
+            $ ./startup.sh
+
+            [스카우터 API 서버 기동]
+            $ cd /app/scouter/webapp
+            TCP 6188 포트 사용
+            $ ./startup.sh
+
+            [FlowKat 서버 기동]
+            $ cd /app/flowkat/bin
+            TCP 8082 포트 사용
+            $ ./startup.sh
+            ```
+            - 정지
+            ```
+            # su - apm
+            [FlowKat 서버 종료]
+            $ cd /app/flowkat/bin
+            $ ./shutdown.sh
+
+            [스카우터 API 서버 종료]
+            $ cd /app/scouter/webapp
+            $ ./shutdown.sh
+
+            [스카우터 서버 종료]
+            $ cd /app/scouter/server
+            $ ./shutdown.sh
+            ```
+           </p>
           </S.textModal>
         </S.layoutMain>
       )}
@@ -345,7 +278,7 @@ function Desktop() {
           <List>
             <List.Item
               as="a"
-              href="mailto:janne.ilkka@gmail.com"
+              href="mailto:admin@papercraft.dev"
               icon={<Mail variant="32x32_4" />}
               target="_blank"
             >
@@ -369,28 +302,17 @@ function Desktop() {
                 ))}
               </List>
             </List.Item>
-            <List.Item icon={<CdMusic variant="32x32_4" />}>
-              Tunes
-              <List>
-                <List.Item
-                  onClick={handleOpenVaporwaveModal1}
-                  icon={<CdMusic variant="32x32_4" />}
-                >
-                  Janne's Vaporwave Story from 2018
-                </List.Item>
-              </List>
-            </List.Item>
             <List.Item
               icon={<User variant="32x32_4" />}
-              onClick={handleOpenPhotoModal}
+              onClick={handleOpenCharacterDesignModal}
             >
-              Janne
+              FlowKat
             </List.Item>
             <List.Item
               icon={<Mspaint variant="32x32_4" />}
-              onClick={handleOpenSkillsModal}
+              onClick={handleOpenManualModal}
             >
-              Skills
+              Manual
             </List.Item>
             <List.Divider />
             <List.Item
@@ -404,20 +326,20 @@ function Desktop() {
       />
       <React.Fragment>
         <Shortcuts
-          openPortfolio={openPortfolio}
-          openCV={openCV}
-          openTunes={openTunes}
+          openReleaseNote={openReleaseNote}
+          openCharacterDesign={openCharacterDesign}
+          openMakers={openMakers}
         />
-        {explorerOpened && (
-          <Portfolio
+        {rnOpened && (
+          <ReleaseNote
             items={items}
-            closePortfolio={closePortfolio}
+            closeReleaseNote={closeReleaseNote}
             isMobile={isMobile}
           />
         )}
-        {cvOpened && <CV items={items} closeCV={closeCV} isMobile={isMobile} />}
-        {tunesOpened && (
-          <Tunes items={items} closeTunes={closeTunes} isMobile={isMobile} />
+        {cdOpened && <CharacterDesign items={items} closeCharacterDesign={closeCharacterDesign} isMobile={isMobile} />}
+        {mkOpened && (
+          <Makers items={items} closeMakers={closeMakers} isMobile={isMobile} />
         )}
       </React.Fragment>
     </ThemeProvider>

@@ -1,19 +1,15 @@
 const socialMedia = [
   {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/janneilkka/",
+    name: "FlowKat",
+    url: "https://flowkat.papercraft.dev/",
   },
   {
     name: "Github",
-    url: "https://www.github.com/janneilkka/",
+    url: "https://github.com/papercraft-projects/",
   },
   {
-    name: "Instagram",
-    url: "https://instagram.com/janne.ilkka",
-  },
-  {
-    name: "Spotify",
-    url: "https://open.spotify.com/user/rogergregor",
+    name: "Homepage",
+    url: "https://flowkat.yeonmu.dev",
   },
 ];
 

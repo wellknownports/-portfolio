@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./styles.scss";
 import PropTypes from "prop-types";
 import Box from "./desktopBox";
@@ -9,7 +9,7 @@ const PageProps = {
   title: PropTypes.string,
 };
 
-const Page = ({ children, description = null, title = "Janne Koivisto" }) => (
+const Page = ({ children, description = null, title = "FlowKat" }) => (
   <>
     <Box as="main">{children}</Box>
   </>
