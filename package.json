@@ -1,6 +1,6 @@
 {
-  "homepage": "https://wellknownports.github.io/",
-  "name": "myPortfolio",
+  "homepage": "https://wellknownports.github.io/-portfolio",
+  "name": "flowkat95",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test"
