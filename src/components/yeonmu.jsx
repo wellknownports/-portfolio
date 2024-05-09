@@ -1,22 +1,22 @@
 import React from "react";
 import { Frame, List } from "@react95/core";
-import { Winpopup3, User } from "@react95/icons";
+import { Msrating106, User } from "@react95/icons";
 import * as S from "./layoutStyling";
 
-function Makers({ closeMakers, isMobile }) {
+function Yeonmu({ closeYeonmu, isMobile }) {
   return (
     <S.layoutMain
       isMobile={isMobile}
-      title={"Makers"}
-      closeModal={closeMakers}
+      title={"Yeonmu"}
+      closeModal={closeYeonmu}
       height="100%"
-      icon={<User variant="16x16_4" />}
+      icon={<Msrating106 variant="16x16_4" />}
       menu={[
         {
           name: "Options",
           list: (
             <List>
-              <List.Item onClick={closeMakers}>Close</List.Item>
+              <List.Item onClick={closeYeonmu}>Close</List.Item>
             </List>
           ),
         },
@@ -28,12 +28,10 @@ function Makers({ closeMakers, isMobile }) {
           height: "352px",
         }}
       >
-       만든 사람1: 오꿀복 <br />
-       만든 사람2: 허디퍼 <br />
-       만든 사람3: 스파크 <br />
+       연무기술 가로연 세로무
       </Frame>
     </S.layoutMain>
   );
 }
 
-export default Makers;
+export default Yeonmu;

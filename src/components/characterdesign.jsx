@@ -1,6 +1,6 @@
 import React from "react";
 import { List } from "@react95/core";
-import { Awfxcg321303 } from "@react95/icons";
+import { Winpopup3, User } from "@react95/icons";
 import * as S from "./layoutStyling";
 import FlowKat_Faker from "../images/faker_flowkat.png";
 
@@ -11,7 +11,7 @@ function CharacterDesign({ closeCharacterDesign, isMobile }) {
       title={"Character_Design.txt"}
       closeModal={closeCharacterDesign}
       height="100%"
-      icon={<Awfxcg321303 variant="32x32_4" />}
+      icon={<Winpopup3 variant="16x16_4" />}
       menu={[
         {
           name: "Options",

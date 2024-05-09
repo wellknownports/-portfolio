@@ -29,12 +29,17 @@ import {
   CdMusic,
   Progman34,
   Mail,
+  Main100,
+  ComputerFind,
+  Network3,
+  Winpopup3,
 } from "@react95/icons";
 
 /* 금산 인삼, 풍기 인견, 포항 과메기 수입 */
 import ReleaseNote from "./releasenote";
 import CharacterDesign from "./characterdesign";
 import Makers from "./makers";
+import Yeonmu from "./yeonmu";
 
 
 /* 데스크탑이라는 전체창에 대한 함수  */
@@ -84,6 +89,15 @@ function Desktop() {
     setShowMakersModal(false);
   }, []);
 
+    /* Yeonmu Modal */
+    const [showYeonmuModal, setShowYeonmuModal] = useState(false);
+    const handleOpenYeonmuModal = useCallback(() => {
+      setShowYeonmuModal(true);
+    }, []);
+    const handleCloseYeonmuModal = useCallback(() => {
+      setShowYeonmuModal(false);
+    }, []);
+
   /* Manual Modal */
   const [showManualModal, setShowManualModal] = useState(false);
   const handleOpenManualModal = useCallback(() => {
@@ -127,6 +141,19 @@ function Desktop() {
 
   const [mkOpened, toggleMakers] = useState(false);
 
+  /* Yeonmu Shortcut */
+
+  const closeYeonmu = () => {
+    toggleYeonmu(false);
+  };
+
+  const openYeonmu = () => {
+    toggleYeonmu(true);
+  };
+
+
+  const [ymOpened, toggleYeonmu] = useState(false);
+
 /* 윈도우 데스크탑을 그려 보아요 */
 
   return (
@@ -135,7 +162,7 @@ function Desktop() {
       {showAboutModal && (
         <S.layoutMain
           isMobile={isMobile}
-          icon={<Progman37 variant="32x32_4" />}
+          icon={<ComputerFind variant="16x16_4" />}
           title={"About.txt"}
           closeModal={handleCloseAboutModal}
           menu={[
@@ -179,7 +206,7 @@ function Desktop() {
           isMobile={isMobile}
           title={"flowkat design.jpeg"}
           closeModal={handleCloseCharacterDesignModal}
-          icon={<User variant="32x32_4" />}
+          icon={<User variant="16x16_4" />}
           menu={[
             {
               name: "Options",
@@ -214,7 +241,7 @@ function Desktop() {
           isMobile={isMobile}
           closeModal={handleCloseManualModal}
           height="100%"
-          icon={<CdMusic variant="32x32_4" />}
+          icon={<Mspaint variant="16x16_4" />}
           width={340}
           menu={[
             {
@@ -282,10 +309,10 @@ function Desktop() {
               icon={<Mail variant="32x32_4" />}
               target="_blank"
             >
-              Email me
+              &nbsp;Email me
             </List.Item>
             <List.Divider />
-            <List.Item icon={<Progman34 variant="32x32_4" />}>
+            <List.Item icon={<Network3 variant="32x32_4" />}>
               Socials
               <List>
                 {socialMedia.map(({ icon, name, url }) => (
@@ -306,20 +333,20 @@ function Desktop() {
               icon={<User variant="32x32_4" />}
               onClick={handleOpenCharacterDesignModal}
             >
-              FlowKat
+              &nbsp;FlowKat
             </List.Item>
             <List.Item
               icon={<Mspaint variant="32x32_4" />}
               onClick={handleOpenManualModal}
             >
-              Manual
+              &nbsp;Manual
             </List.Item>
             <List.Divider />
             <List.Item
-              icon={<Progman37 variant="32x32_4" />}
+              icon={<ComputerFind variant="32x32_4" />}
               onClick={handleOpenAboutModal}
             >
-              About
+              &nbsp;About
             </List.Item>
           </List>
         }
@@ -329,6 +356,7 @@ function Desktop() {
           openReleaseNote={openReleaseNote}
           openCharacterDesign={openCharacterDesign}
           openMakers={openMakers}
+          openYeonmu={openYeonmu}
         />
         {rnOpened && (
           <ReleaseNote
@@ -340,6 +368,9 @@ function Desktop() {
         {cdOpened && <CharacterDesign items={items} closeCharacterDesign={closeCharacterDesign} isMobile={isMobile} />}
         {mkOpened && (
           <Makers items={items} closeMakers={closeMakers} isMobile={isMobile} />
+        )}
+        {ymOpened && (
+          <Yeonmu items={items} closeYeonmu={closeYeonmu} isMobile={isMobile} />
         )}
       </React.Fragment>
     </ThemeProvider>

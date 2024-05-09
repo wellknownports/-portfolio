@@ -10,7 +10,7 @@ function ReleaseNote({ closeReleaseNote, isMobile }) {
       title={"Release_Note.txt"}
       closeModal={closeReleaseNote}
       height="100%"
-      icon={<Explorer103 variant="32x32_4" />}
+      icon={<Explorer103 variant="16x16_4" />}
       menu={[
         {
           name: "Options",
