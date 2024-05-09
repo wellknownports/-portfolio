@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8f6df2c2.chunk.css",
+    "main.js": "/static/js/main.12c389c4.chunk.js",
+    "main.js.map": "/static/js/main.12c389c4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3aa94360.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3aa94360.js.map",
+    "static/js/2.fa25db90.chunk.js": "/static/js/2.fa25db90.chunk.js",
+    "static/js/2.fa25db90.chunk.js.map": "/static/js/2.fa25db90.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8f6df2c2.chunk.css.map": "/static/css/main.8f6df2c2.chunk.css.map",
+    "static/js/2.fa25db90.chunk.js.LICENSE.txt": "/static/js/2.fa25db90.chunk.js.LICENSE.txt",
+    "static/media/MS-Sans-Serif.30dfad5d.eot": "/static/media/MS-Sans-Serif.30dfad5d.eot",
+    "static/media/MS-Sans-Serif.4fb9ed0f.woff2": "/static/media/MS-Sans-Serif.4fb9ed0f.woff2",
+    "static/media/MS-Sans-Serif.82eeac7b.woff": "/static/media/MS-Sans-Serif.82eeac7b.woff",
+    "static/media/MS-Sans-Serif.93905f8d.ttf": "/static/media/MS-Sans-Serif.93905f8d.ttf",
+    "static/media/React95Video-Numbers.1b0c9ed8.woff2": "/static/media/React95Video-Numbers.1b0c9ed8.woff2",
+    "static/media/React95Video-Numbers.70eb4c83.eot": "/static/media/React95Video-Numbers.70eb4c83.eot",
+    "static/media/React95Video-Numbers.abf01d42.ttf": "/static/media/React95Video-Numbers.abf01d42.ttf",
+    "static/media/React95Video-Numbers.cc52603d.woff": "/static/media/React95Video-Numbers.cc52603d.woff",
+    "static/media/releasenotecss.scss": "/static/media/bgnd.f16653ad.png",
+    "static/media/check-disabled.svg": "/static/media/check-disabled.6c74515b.svg",
+    "static/media/check.svg": "/static/media/check.cab94f08.svg",
+    "static/media/faker_flowkat.9d19c2e6.png": "/static/media/faker_flowkat.9d19c2e6.png",
+    "static/media/flowkat-logo1.47da2cfc.png": "/static/media/flowkat-logo1.47da2cfc.png",
+    "static/media/rightcaret.4316e9ff.svg": "/static/media/rightcaret.4316e9ff.svg",
+    "static/media/spining_flowkat.e243bc4c.gif": "/static/media/spining_flowkat.e243bc4c.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3aa94360.js",
+    "static/js/2.fa25db90.chunk.js",
+    "static/css/main.8f6df2c2.chunk.css",
+    "static/js/main.12c389c4.chunk.js"
+  ]
+}
