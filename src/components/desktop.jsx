@@ -218,22 +218,28 @@ function Desktop() {
             },
           ]}
         >
-          <Frame
-            boxShadow="none"
-            style={{
-              margin: "auto",
-            }}
-          >
-            <img
-              src={FlowKat_Bing}
-              aria-hidden
-              alt="BingBing FlowKat"
-              class="full-width-image"
-            ></img>
-          </Frame>
-          <div class="image-text">
-            <p>spining-flowkat.gif</p>
-          </div>
+         <S.layoutMainContent bg="white" boxShadow="out">
+            <S.textModal>
+              <h1>FlowKat & Scouter</h1>
+              <p>
+               FlowKat은 오픈소스 APM의 대표격인 스카우터 기반의 Java 애플리케이션 성능 관리 솔루션입니다.
+               스카우터가 가진 강력한 기능들은 사용성이 높은 웹으로 이식하고 사용자 편의와 분석 기능을 덧붙여 완성했습니다.
+               서비스 전반의 흐름을 수집하여 직관적이고 다양한 방법으로 사용자에게 새로운 모니터링 경험을 제공하려 노력하는 미어캣.
+               바로 플로우캣입니다.
+              </p>
+            <div align="center">
+              <img
+                src={FlowKat_Bing}
+                aria-hidden
+                alt="BingBing FlowKat"
+                class="full-width-image"
+              ></img>
+            </div>
+            <div class="image-text">
+              <p align="center">spining-flowkat.gif</p>
+            </div>
+            </S.textModal>
+          </S.layoutMainContent>
         </S.layoutMain>
       )}
       {showManualModal && (
@@ -259,43 +265,36 @@ function Desktop() {
         >
           <S.textModal>
           <p>
-            <h1>스카우터 서버 기동/정지</h1>
-            <b>NOTE:</b> 스카우터 에이전트는 WAS에 플러그인 형태로 동작합니다. 일반적으로 WAS 기동/종료에 맞춰 자동으로 기동/종료됩니다.
-            <ProgressBar width={250} percent={75} />
+            <h1>Quick Guide</h1>
+            <b>플로우캣 서비스를 빠르게 만나볼 수 있는 가이드 문서입니다.</b>
             <br />
-            - 기동
-            ```
-            # su - apm
-            [스카우터 수집 서버 기동]
-            $ cd /app/scouter/server
-            //TCP 6100, UDP 6100 포트 사용
-            $ ./startup.sh
+            <h2>설치 단계 요약</h2>
 
-            [스카우터 API 서버 기동]
-            $ cd /app/scouter/webapp
-            TCP 6188 포트 사용
-            $ ./startup.sh
+            1. 플로우캣 서버 설치 파일(flowkat-package.tar.gz)을 준비된 서버(Ubuntu 22.04)에 업로드합니다. <br />
+            2. 설치 계정은 root를 제외한 계정으로 준비합니다. ex) flowkat, apm 등등 <br />
+            3. 설치 파일 압축 해제 <br />
+            4. 수집 서버 설치 <br />
+            5. API 서버 설치 <br />
+            6. 대시보드 서버 설치 <br />
+            7. 에이전트 설치 <br />
+            8. 플로우캣 서비스 확인 <br />
 
-            [FlowKat 서버 기동]
-            $ cd /app/flowkat/bin
-            TCP 8082 포트 사용
-            $ ./startup.sh
-            ```
-            - 정지
-            ```
-            # su - apm
-            [FlowKat 서버 종료]
-            $ cd /app/flowkat/bin
-            $ ./shutdown.sh
+            <h2>환경 변수 설정</h2>
+            <b>원활한 설치 진행을 위해 다음과 같이 사용자 계정의 환경 변수를 수정합니다.</b>
+            <br />
 
-            [스카우터 API 서버 종료]
-            $ cd /app/scouter/webapp
-            $ ./shutdown.sh
+            <code>
+              $vi ~/.bashrc
+              ...
+              # 예시
+              export JAVA_HOME=/home/ubuntu/jdk8u402-b06
+              export FLOWKAT_HOME=/home/ubuntu/flowkat
+              export FLOWKAT_COLLECTOR_SERVER_HOME=$FLOWKAT_HOME/collect.server
+              export FLOWKAT_API_SERVER_HOME=$FLOWKAT_HOME/api.server
+              export FLOWKAT_DASHBOARD_SERVER_HOME=$FLOWKAT_HOME/dashboard.server
+              ...
+            </code>
 
-            [스카우터 서버 종료]
-            $ cd /app/scouter/server
-            $ ./shutdown.sh
-            ```
            </p>
           </S.textModal>
         </S.layoutMain>

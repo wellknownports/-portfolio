@@ -6,7 +6,8 @@ import DesktopIcons from "./components/desktopIcons";
 
 const Home = () => {
   return (
-    <body class="background">
+//    <body class="background">
+    <body>
       <ThemeProvider>
         <GlobalStyle />
         <Page>

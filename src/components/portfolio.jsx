@@ -228,7 +228,7 @@ function Portfolio({ closePortfolio, isMobile }) {
           <span>Role: Designer</span>
           <p>
             <h4>Background</h4>
-            The Finnish Patent and Registration Office (PRH) didn’t have an
+            The Finnish Patent and Registration Office (PRH) didn’t have an  
             official document model that was used on digitally-generated
             documents. The documents followed a simple automatically generated
             format, meaning that they were unaccessible, unrecognizable and
